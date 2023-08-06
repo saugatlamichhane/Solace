@@ -32,6 +32,8 @@ public class GroupAdapter extends RecyclerView.Adapter<GroupAdapter.GroupViewHol
         Group group = groupList.get(position);
         holder.groupName.setText(group.getGroupName());
         holder.heading.setText(group.getHeading());
+        holder.msg1.setText(group.getMsg1());
+        holder.msg2.setText(group.getMsg2());
     }
 
     @Override
@@ -41,12 +43,14 @@ public class GroupAdapter extends RecyclerView.Adapter<GroupAdapter.GroupViewHol
 
     public static class GroupViewHolder extends RecyclerView.ViewHolder {
 
-        TextView groupName, heading;
+        TextView groupName, heading, msg1, msg2;
 
         public GroupViewHolder(@NonNull View itemView) {
             super(itemView);
             groupName = itemView.findViewById(R.id.groupName);
             heading = itemView.findViewById(R.id.heading);
+            msg1 = itemView.findViewById(R.id.msg1);
+            msg2 = itemView.findViewById(R.id.msg2);
         }
     }
 }
