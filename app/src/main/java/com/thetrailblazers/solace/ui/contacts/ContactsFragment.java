@@ -1,4 +1,4 @@
-package com.thetrailblazers.solace.ui.notifications;
+package com.thetrailblazers.solace.ui.contacts;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -10,21 +10,21 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.thetrailblazers.solace.databinding.FragmentNotificationsBinding;
+import com.thetrailblazers.solace.databinding.FragmentContactsBinding;
 
-public class NotificationsFragment extends Fragment {
+public class ContactsFragment extends Fragment {
 
-    private FragmentNotificationsBinding binding;
+    private FragmentContactsBinding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        NotificationsViewModel notificationsViewModel =
-                new ViewModelProvider(this).get(NotificationsViewModel.class);
+        ContactsViewModel notificationsViewModel =
+                new ViewModelProvider(this).get(ContactsViewModel.class);
 
-        binding = FragmentNotificationsBinding.inflate(inflater, container, false);
+        binding = FragmentContactsBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        final TextView textView = binding.textNotifications;
+        final TextView textView = binding.textContacts;
         notificationsViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
         return root;
     }
